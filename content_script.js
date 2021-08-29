@@ -16,8 +16,6 @@ $(function() {
     case 'start':
       localStorage['THSR_captcha_code'] = message.captcha_code;
       localStorage['THSR_training']     = 'training';
-      runner();
-      sleep(5000);
       break;
     case 'page_status':
       sendResponse(page_status);
