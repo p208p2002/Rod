@@ -71,12 +71,16 @@ $(function() {
         switch(page_status) {
         case 'Step01':
           step_1();
+          sleep(2000);
         case 'Step02':
           step_2();
+          sleep(2000);
         case 'Step03':
           step_3();
+          sleep(2000);
         case 'Step04':
           step_4();
+          sleep(2000);
           break;
         default:
           stop_runner();
