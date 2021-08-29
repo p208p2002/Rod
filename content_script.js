@@ -3,14 +3,21 @@ var info = {};
 var page_status;
 var url_search;
 
+function sleep(miliseconds) {
+   var currentTime = new Date().getTime();
+
+   while (currentTime + miliseconds >= new Date().getTime()) {
+   }
+}
+
 $(function() {
   chrome.extension.onMessage.addListener(function(message,sender,sendResponse) {
     switch(message.method) {
     case 'start':
       localStorage['THSR_captcha_code'] = message.captcha_code;
       localStorage['THSR_training']     = 'training';
-
       runner();
+      sleep(5000);
       break;
     case 'page_status':
       sendResponse(page_status);
